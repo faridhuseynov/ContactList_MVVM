@@ -1,0 +1,19 @@
+{
+  "defaultAssembly": "ContactList_MVVM",
+  "components": [
+    { "type": "ContactList_MVVM.ViewModels.AppViewModel" },
+    { "type": "ContactList_MVVM.ViewModels.AddEdutContactViewModel" },
+    { "type": "ContactList_MVVM.ViewModels.ContactListViewModel" },
+    {
+      "type": "ContactList_MVVM.Services.NavigationService",
+      "services": [
+        {
+          { "type": "ContactList_MVVM.Services.INavigationService" }
+        }
+      ]
+
+    }
+
+
+  ]
+}
