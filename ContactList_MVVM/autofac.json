@@ -10,7 +10,8 @@
         {
           { "type": "ContactList_MVVM.Services.INavigationService" }
         }
-      ]
+      ],
+      "instanceScope": "single-instance"
 
     }
 
