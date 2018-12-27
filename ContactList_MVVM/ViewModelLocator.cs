@@ -2,12 +2,14 @@
 using Autofac.Configuration;
 using ContactList_MVVM.Services;
 using ContactList_MVVM.ViewModels;
+using GalaSoft.MvvmLight;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ContactList_MVVM
 {
@@ -19,6 +21,11 @@ namespace ContactList_MVVM
 
         private INavigationService navigationService;
         public static IContainer Container;
+
+        public ViewModelBase GetAppViewModel()
+        {
+            return appViewModel;
+        }
 
         public ViewModelLocator()
         {
@@ -41,10 +48,10 @@ namespace ContactList_MVVM
 
                 navigationService.Navigate<ContactListViewModel>();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
     }
