@@ -131,6 +131,10 @@
     <Compile Include="Migrations\201812261924043_Initial.Designer.cs">
       <DependentUpon>201812261924043_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812271916363_RequiredRuleAdd].cs" />
+    <Compile Include="Migrations\201812271916363_RequiredRuleAdd].Designer.cs">
+      <DependentUpon>201812271916363_RequiredRuleAdd].cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Category.cs" />
@@ -167,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201812261924043_Initial.resx">
       <DependentUpon>201812261924043_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812271916363_RequiredRuleAdd].resx">
+      <DependentUpon>201812271916363_RequiredRuleAdd].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
