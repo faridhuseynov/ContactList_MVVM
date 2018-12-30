@@ -5,10 +5,22 @@
     { "type": "ContactList_MVVM.ViewModels.AddEditContactViewModel" },
     { "type": "ContactList_MVVM.ViewModels.ContactListViewModel" },
     {
+      "type": "ContactList_MVVM.Models.AppDbContext",
+      "instanceScope": "single-instance"
+    },
+    {
+      "type": "ContactList_MVVM.Services.MessageService",
+      "services": [
+        {
+          "type": "ContactList_MVVM.Services.IMessageService"
+        }
+      ]
+    },
+    {
       "type": "ContactList_MVVM.Services.NavigationService",
       "services": [
         {
-           "type": "ContactList_MVVM.Services.INavigationService" 
+          "type": "ContactList_MVVM.Services.INavigationService"
         }
       ],
       "instanceScope": "single-instance"

@@ -4,9 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ContactList_MVVM.Views"
+             xmlns:vm="clr-namespace:ContactList_MVVM.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance vm:AddEditContactViewModel}">
+    <StackPanel>
+        <Label FontSize="30">Name:</Label>
+        <TextBox x:Name="NameTextBox" FontSize="30" Text="{Binding Contact.Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Content="{Binding (Validation.Errors)[0].ErrorContent, ElementName=NameTextBox}" Foreground="Red" FontSize="20"></Label>
+        <Label FontSize="30">Phone:</Label>
+        <TextBox x:Name="PhoneTextBox" FontSize="30" Text="{Binding Contact.Phone, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Content="{Binding (Validation.Errors)[0].ErrorContent, ElementName=PhoneTextBox}" Foreground="Red" FontSize="20"></Label>
+        <Label FontSize="30">Email:</Label>
+        <TextBox x:Name="EmailTextBox" FontSize="30" Text="{Binding Contact.Email, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Content="{Binding (Validation.Errors)[0].ErrorContent, ElementName=EmailTextBox}" Foreground="Red" FontSize="20"></Label>
+        <Label FontSize="30">Category:</Label>
+        <ComboBox SelectedItem="{Binding SelectedCategory}" SelectedIndex="0" FontSize="30" DisplayMemberPath="Name" ItemsSource="{Binding Categories}"></ComboBox>
+        <UniformGrid Columns="2" Rows="1">
+            <Button FontSize="30" Command="{Binding CancelCommand}">Cancel</Button>
+            <Button FontSize="30" Command="{Binding AddCommand}">Add</Button>
+        </UniformGrid>
+    </StackPanel>
 </UserControl>

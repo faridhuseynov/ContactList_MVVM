@@ -127,6 +127,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Messages\ContactListChangedMessage.cs" />
     <Compile Include="Migrations\201812261924043_Initial.cs" />
     <Compile Include="Migrations\201812261924043_Initial.Designer.cs">
       <DependentUpon>201812261924043_Initial.cs</DependentUpon>
@@ -135,11 +137,17 @@
     <Compile Include="Migrations\201812271916363_RequiredRuleAdd].Designer.cs">
       <DependentUpon>201812271916363_RequiredRuleAdd].cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812301024356_UpdateAsPerBucketList.cs" />
+    <Compile Include="Migrations\201812301024356_UpdateAsPerBucketList.Designer.cs">
+      <DependentUpon>201812301024356_UpdateAsPerBucketList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Services\IMessageService.cs" />
     <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\AddEditContactViewModel.cs" />
@@ -174,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812271916363_RequiredRuleAdd].resx">
       <DependentUpon>201812271916363_RequiredRuleAdd].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301024356_UpdateAsPerBucketList.resx">
+      <DependentUpon>201812301024356_UpdateAsPerBucketList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

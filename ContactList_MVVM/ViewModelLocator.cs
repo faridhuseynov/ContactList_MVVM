@@ -22,11 +22,6 @@ namespace ContactList_MVVM
         private INavigationService navigationService;
         public static IContainer Container;
 
-        public ViewModelBase GetAppViewModel()
-        {
-            return appViewModel;
-        }
-
         public ViewModelLocator()
         {
             try
@@ -38,8 +33,8 @@ namespace ContactList_MVVM
                 builder.RegisterModule(module);
                 Container = builder.Build();
 
-
                 navigationService = Container.Resolve<INavigationService>();
+                appViewModel = Container.Resolve<AppViewModel>();
                 contactListViewModel = Container.Resolve<ContactListViewModel>();
                 addEditContactViewModel = Container.Resolve<AddEditContactViewModel>();
 
@@ -50,9 +45,12 @@ namespace ContactList_MVVM
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
+        }
+        public ViewModelBase GetAppViewModel()
+        {
+            return appViewModel;
         }
     }
 }
